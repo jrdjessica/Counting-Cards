@@ -11,73 +11,88 @@ const plusOneValue = [1, 2, 3, 4, 5, 6, 15, 16, 17, 18, 19, 20, 29, 30, 31, 32, 
 
 
 function Exercises() {
-    const [exercise, setExercise] = React.useState(false);
     const [cardImg, setCardImg] = React.useState('');
-    const [correct, setCorrect] = React.useState(0);
-    const [cardIndex, setCardIndex] = React.useState(0);
+    // const [correct, setCorrect] = React.useState(0);
+    const [cardIndex, setCardIndex] = React.useState();
     const [feedback, setFeedback] = React.useState("");
-    console.log('exercises')
-    console.log(cardIndex)
-
+    const [exerciseStatus, setExerciseStatus] = React.useState(null);
 
     function ExerciseOne() {
-        setCardIndex(Math.floor(Math.random() * cardDeck.length));
 
+        // console.log(cardIndex)
+
+        return (
+            <div>
+                ex {exerciseStatus}
+                {!exerciseStatus && <button id="btn" onClick={() => { GetRandomCard(); setExerciseStatus(1); }}>Exercise 1</button>}
+                {exerciseStatus === 1 && <button onClick={GetRandomCard}>Next</button>}
+            </div>
+        )
+    }
+
+    // function ExerciseTwo() {
+    //     return (
+    //         <div>
+    //             ex 2
+    //             <button id="btn" onClick={GetRandomCard}>Start</button>
+    //         </div>
+    //     )
+    // }
+
+    function GetRandomCard() {
         const randomCard = cardDeck[cardIndex];
-
-        setExercise(true);
         setCardImg(randomCard);
-        console.log('tutorial')
-        if (minusOneValue.includes(cardIndex)) {
-            console.log('-1')
-        } else if (zeroValue.includes(cardIndex)) {
-            console.log('0')
-        } else if (plusOneValue.includes(cardIndex)) {
-            console.log('+1')
-        }
+        setCardIndex(Math.floor(Math.random() * cardDeck.length));
+    }
+
+
+    function UserInputButtons() {
+        return (
+            <div>
+                {<button onClick={() => checkAnswer(-1)}>-1</button>}
+                {<button onClick={() => checkAnswer(0)}>0</button>}
+                {<button onClick={() => checkAnswer(1)}>+1</button>}
+            </div>
+        )
     }
 
 
     function checkAnswer(userInput) {
-        console.log(userInput)
-        if (minusOneValue.includes(cardIndex) && userInput == -1) {
-            setCorrect(correct + 1)
+        console.log(cardIndex)
+
+        if (minusOneValue.includes(cardIndex) && userInput === -1) {
+            console.log('-1')
+            // setCorrect(correct + 1)
             setFeedback('Correct')
 
 
-        } else if (zeroValue.includes(cardIndex) && userInput == 0) {
-            setCorrect(correct + 1)
+        } else if (zeroValue.includes(cardIndex) && userInput === 0) {
+            console.log('0')
+            // setCorrect(correct + 1)
             setFeedback('Correct')
-        } else if (plusOneValue.includes(cardIndex) && userInput == 1) {
-            setCorrect(correct + 1)
+        } else if (plusOneValue.includes(cardIndex) && userInput === 1) {
+            console.log('1')
+            // setCorrect(correct + 1)
             setFeedback('Correct')
         } else {
+            console.log('else')
             setFeedback('Incorrect. Try again.')
         }
+
     }
 
     return (
         <div>
-            Exercise 1
-            <button id="btn" onClick={ExerciseOne}>Start</button>
-            {exercise && <p>Choose the correct value</p>}
-            <div>
-                {feedback}
-            </div>
-            <div>
+            <ExerciseOne />
+            {/* <ExerciseTwo /> */}
+            <div className='cardImg'>
                 {cardImg}
             </div>
+            {cardIndex}
             <div>
-                {exercise && <button onClick={() => checkAnswer(-1)}>-1</button>}
-                {exercise && <button onClick={() => checkAnswer(0)}>0</button>}
-                {exercise && <button onClick={() => checkAnswer(1)}>+1</button>}
+                <UserInputButtons />
             </div>
-            <div>
-                {correct}/10
-            </div>
-            <div>
-                {feedback && <button onClick={ExerciseOne}>Next Question</button>}
-            </div>
+            {feedback}
         </div>
     );
 }
