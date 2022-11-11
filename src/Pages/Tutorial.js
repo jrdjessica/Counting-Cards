@@ -2,67 +2,64 @@ import React from 'react';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
 
-export const cardDeck = [
+export const cardDeck = {
     // Spades playing cards
-    <p className="cardImg">&#x1F0A1;</p>,
-    <p className="cardImg">&#x1F0A2;</p>,
-    <p className="cardImg">&#x1F0A3;</p>,
-    <p className="cardImg">&#x1F0A4;</p>,
-    <p className="cardImg">&#x1F0A5;</p>,
-    <p className="cardImg">&#x1F0A6;</p>,
-    <p className="cardImg">&#x1F0A7;</p>,
-    <p className="cardImg">&#x1F0A8;</p>,
-    <p className="cardImg">&#x1F0A9;</p>,
-    <p className="cardImg">&#x1F0AA;</p>,
-    <p className="cardImg">&#x1F0AB;</p>,
-    <p className="cardImg">&#x1F0AD;</p>,
-    <p className="cardImg">&#x1F0AE;</p>,
+    '\u{1F0A1}': -1,
+    '\u{1F0A2}': 1,
+    '\u{1F0A3}': 1,
+    '\u{1F0A4}': 1,
+    '\u{1F0A5}': 1,
+    '\u{1F0A6}': 1,
+    '\u{1F0A7}': 0,
+    '\u{1F0A8}': 0,
+    '\u{1F0A9}': 0,
+    '\u{1F0AA}': -1,
+    '\u{1F0AB}': -1,
+    '\u{1F0AD}': -1,
+    '\u{1F0AE}': -1,
     // Hearts playing cards
-    <p className="cardImg">&#x1F0B1;</p>,
-    <p className="cardImg">&#x1F0B2;</p>,
-    <p className="cardImg">&#x1F0B3;</p>,
-    <p className="cardImg">&#x1F0B4;</p>,
-    <p className="cardImg">&#x1F0B5;</p>,
-    <p className="cardImg">&#x1F0B6;</p>,
-    <p className="cardImg">&#x1F0B7;</p>,
-    <p className="cardImg">&#x1F0B8;</p>,
-    <p className="cardImg">&#x1F0B9;</p>,
-    <p className="cardImg">&#x1F0BA;</p>,
-    <p className="cardImg">&#x1F0BB;</p>,
-    <p className="cardImg">&#x1F0BC;</p>,
-    <p className="cardImg">&#x1F0BD;</p>,
-    <p className="cardImg">&#x1F0BE;</p>,
+    '\u{1F0B1}': -1,
+    '\u{1F0B2}': 1,
+    '\u{1F0B3}': 1,
+    '\u{1F0B4}': 1,
+    '\u{1F0B5}': 1,
+    '\u{1F0B6}': 1,
+    '\u{1F0B7}': 0,
+    '\u{1F0B8}': 0,
+    '\u{1F0B9}': 0,
+    '\u{1F0BA}': -1,
+    '\u{1F0BB}': -1,
+    '\u{1F0BD}': -1,
+    '\u{1F0BE}': -1,
     // Diamonds playing cards
-    <p className="cardImg">&#x1F0C1;</p>,
-    <p className="cardImg">&#x1F0C2;</p>,
-    <p className="cardImg">&#x1F0C3;</p>,
-    <p className="cardImg">&#x1F0C4;</p>,
-    <p className="cardImg">&#x1F0C5;</p>,
-    <p className="cardImg">&#x1F0C6;</p>,
-    <p className="cardImg">&#x1F0C7;</p>,
-    <p className="cardImg">&#x1F0C8;</p>,
-    <p className="cardImg">&#x1F0C9;</p>,
-    <p className="cardImg">&#x1F0CA;</p>,
-    <p className="cardImg">&#x1F0CB;</p>,
-    <p className="cardImg">&#x1F0CC;</p>,
-    <p className="cardImg">&#x1F0CD;</p>,
-    <p className="cardImg">&#x1F0CE;</p>,
+    '\u{1F0C1}': -1,
+    '\u{1F0C2}': 1,
+    '\u{1F0C3}': 1,
+    '\u{1F0C4}': 1,
+    '\u{1F0C5}': 1,
+    '\u{1F0C6}': 1,
+    '\u{1F0C7}': 0,
+    '\u{1F0C8}': 0,
+    '\u{1F0C9}': 0,
+    '\u{1F0CA}': -1,
+    '\u{1F0CB}': -1,
+    '\u{1F0CD}': -1,
+    '\u{1F0CE}': -1,
     // Clubs playing cards
-    <p className="cardImg">&#x1F0D1;</p>,
-    <p className="cardImg">&#x1F0D2;</p>,
-    <p className="cardImg">&#x1F0D3;</p>,
-    <p className="cardImg">&#x1F0D4;</p>,
-    <p className="cardImg">&#x1F0D5;</p>,
-    <p className="cardImg">&#x1F0D6;</p>,
-    <p className="cardImg">&#x1F0D7;</p>,
-    <p className="cardImg">&#x1F0D8;</p>,
-    <p className="cardImg">&#x1F0D9;</p>,
-    <p className="cardImg">&#x1F0DA;</p>,
-    <p className="cardImg">&#x1F0DB;</p>,
-    <p className="cardImg">&#x1F0DC;</p>,
-    <p className="cardImg">&#x1F0DD;</p>,
-    <p className="cardImg">&#x1F0DE;</p>,
-]
+    '\u{1F0D1}': -1,
+    '\u{1F0D2}': 1,
+    '\u{1F0D3}': 1,
+    '\u{1F0D4}': 1,
+    '\u{1F0D5}': 1,
+    '\u{1F0D6}': 1,
+    '\u{1F0D7}': 0,
+    '\u{1F0D8}': 0,
+    '\u{1F0D9}': 0,
+    '\u{1F0DA}': -1,
+    '\u{1F0DB}': -1,
+    '\u{1F0DD}': -1,
+    '\u{1F0DE}': -1,
+}
 
 function Tutorial() {
     const [words, setWords] = React.useState("");
@@ -77,33 +74,19 @@ function Tutorial() {
         if (pageCount === 2) {
             setWords('Aces = -1')
             setCards(cardDeck[0])
+            console.log(cardDeck[0])
         };
         if (pageCount === 3) {
             setWords('Card values 2-6  = +1')
-            setCards(<div>
-                <p>&#x1F0A2;</p>
-                <p>&#x1F0A3;</p>
-                <p>&#x1F0A4;</p>
-                <p>&#x1F0A5;</p>
-                <p>&#x1F0A6;</p>
-            </div>)
+            setCards(cardDeck.slice(1, 6))
         };
         if (pageCount === 4) {
             setWords('Card values 7-9 = 0')
-            setCards(<div>
-                <p>&#x1F0A7;</p>
-                <p>&#x1F0A8;</p>
-                <p>&#x1F0A9;</p>
-            </div>)
+            setCards(cardDeck.slice(6, 9))
         };
         if (pageCount === 5) {
             setWords('Card values 10+ = -1')
-            setCards(<div>
-                <p>&#x1F0AA;</p>
-                <p>&#x1F0AB;</p>
-                <p>&#x1F0AD;</p>
-                <p>&#x1F0AE;</p>
-            </div>)
+            setCards(cardDeck.slice(9, 13))
         };
         if (pageCount === 6) {
             setWords('Summary: Aces = -1. Card values 2-6  = +1. Card values 7-9 = 0. Card values 10+ = -1.')
