@@ -1,16 +1,24 @@
 import React from 'react';
 import '../App.css';
+import { cardDeck } from './Tutorial'
 
 function Game() {
+    const [game, setGame] = React.useState('off');
 
     function ChooseDifficulty() {
         return (
             <div>
-                <button>Easy</button>
-                <button>Medium</button>
-                <button>Hard</button>
+                {game === 'off' && <button onClick={PlayGame}>Easy</button>}
+                {game === 'off' && <button onClick={PlayGame}>Medium</button>}
+                {game === 'off' && <button onClick={PlayGame}>Hard</button>}
             </div>
         )
+    }
+
+    function PlayGame() {
+        const keys = Object.keys(cardDeck)
+        const randomCard = keys[Math.floor(Math.random() * keys.length)]
+        setGame('on')
     }
 
     return (
