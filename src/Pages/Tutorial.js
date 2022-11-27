@@ -67,6 +67,7 @@ function Tutorial() {
     const [pageCount, setPageCount] = React.useState(1);
 
 
+    // Change page of tutorial
     React.useEffect(() => {
         if (pageCount === 1) {
             setWords('The Hi-Lo Strategy works as values are assigned to cards and players keep a running count based off these cards')
@@ -100,6 +101,7 @@ function Tutorial() {
         };
     }, [pageCount]);
 
+    // Navigate to exercise page
     const navigate = useNavigate();
     const routeChange = () => {
         const path = "/exercise";

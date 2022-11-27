@@ -11,7 +11,7 @@ function Exercises() {
     const [exerciseStatus, setExerciseStatus] = React.useState(null);
 
     function ExerciseOne() {
-
+        // Choose random card from deck
         function GetRandomCard() {
             const keys = Object.keys(cardDeck)
             const randomCard = keys[Math.floor(Math.random() * keys.length)]
@@ -22,7 +22,7 @@ function Exercises() {
 
 
         function UserInputButtons() {
-
+            // Display card values on buttons
             return (
                 <div>
                     {<button onClick={() => CheckAnswer(-1)}>-1</button>}
@@ -35,10 +35,12 @@ function Exercises() {
         function CheckAnswer(userInput) {
 
             function Correct() {
+                // Increment correct answers by one
                 setCorrect(correct + 1)
                 setFeedback('Correct')
             }
 
+            // Check user input
             if (userInput === -1 && cardValue === -1) {
                 Correct();
             } else if (userInput === 0 && cardValue === 0) {
