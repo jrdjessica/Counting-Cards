@@ -5,17 +5,20 @@ import '../App.css';
 function Nav() {
     return (
         <nav>
-            <ul>
-                <Link to="/tutorial">
-                    <li>Tutorial</li>
+            <div className='nav-links'>
+                <Link style={{ textDecoration: 'none' }} to="/" >
+                    <h4>Home</h4>
                 </Link>
-                <Link to="/exercise">
-                    <li>Exercise</li>
+                <Link style={{ textDecoration: 'none' }} to="/tutorial">
+                    <h4>Tutorial</h4>
                 </Link>
-                <Link to="/game">
-                    <li>Counting Game</li>
+                <Link style={{ textDecoration: 'none' }} to="/exercise">
+                    <h4>Exercise</h4>
                 </Link>
-            </ul>
+                {/* <Link to="/game">
+                    <p>Counting Game</p>
+                </Link> */}
+            </div>
         </nav>
     );
 }

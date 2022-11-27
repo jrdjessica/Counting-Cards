@@ -38,6 +38,27 @@
   }
 }
 
-.cardImg {
-  font-size: 100px;
+
+li {
+  list-style-type: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #c0d3c6;
+  height: 35px;
+}
+
+.nav-links {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h4 {
+  color: rgb(48, 47, 47)
 }
