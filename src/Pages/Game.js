@@ -5,6 +5,7 @@ import { cardDeck } from './Tutorial'
 function Game() {
     const [game, setGame] = React.useState('off');
 
+    let answer = 0;
     const GameCards = []
 
     function ChooseDifficulty() {
@@ -24,6 +25,7 @@ function Game() {
             const keys = Object.keys(cardDeck);
             const randomCard = keys[Math.floor(Math.random() * keys.length)];
             GameCards.push(randomCard);
+            answer += cardDeck[randomCard]
         }
     }
 
