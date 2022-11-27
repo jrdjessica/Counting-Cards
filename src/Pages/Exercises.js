@@ -54,17 +54,25 @@ function Exercises() {
 
         return (
             <div>
-                Exercise {exerciseStatus}
-                {!exerciseStatus && <button id="btn" onClick={() => { GetRandomCard(); setExerciseStatus(1); }}>Exercise 1</button>}
+                {!exerciseStatus && <button id="btn" onClick={() => { GetRandomCard(); setExerciseStatus(1); }}>Start</button>}
                 {exerciseStatus === 1 && <p>Choose the correct value</p>}
-                {cardImg}
+                <p id='card'>
+                    {cardImg}
+                </p>
                 <div>
                     {cardImg && UserInputButtons()}
                 </div>
-                {feedback}
-                {feedback === 'Correct' && <button onClick={() => { GetRandomCard(); setFeedback('') }}>Next</button>}
+                <div>
+                    {feedback}
+                </div>
+                <div>
+                    {feedback === 'Correct' && correct !== 20 && <button onClick={() => { GetRandomCard(); setFeedback('') }}>Next</button>}
+                </div>
                 <div>
                     {correct}/20
+                </div>
+                <div>
+                    {correct === 20 && <button onClick={() => { GetRandomCard(); setCorrect(0); setFeedback('') }}>Play Again</button>}
                 </div>
             </div>
         )
@@ -73,10 +81,8 @@ function Exercises() {
 
     return (
         <div>
+            <h1>Exercise</h1>
             <ExerciseOne />
-
-            {/* <ExerciseTwo /> */}
-
         </div>
     );
 }

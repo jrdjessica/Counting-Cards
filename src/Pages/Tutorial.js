@@ -70,27 +70,27 @@ function Tutorial() {
     React.useEffect(() => {
         if (pageCount === 1) {
             setWords('The Hi-Lo Strategy works as values are assigned to cards and players keep a running count based off these cards')
+            setCards('')
         };
         if (pageCount === 2) {
             setWords('Aces = -1')
-            setCards(cardDeck[0])
-            console.log(cardDeck[0])
+            setCards('\u{1F0A1}')
         };
         if (pageCount === 3) {
             setWords('Card values 2-6  = +1')
-            setCards(cardDeck.slice(1, 6))
+            setCards(['\u{1F0A2}', '\u{1F0A3}', '\u{1F0A4}', '\u{1F0A5}', '\u{1F0A6}'])
         };
         if (pageCount === 4) {
             setWords('Card values 7-9 = 0')
-            setCards(cardDeck.slice(6, 9))
+            setCards(['\u{1F0A7}', '\u{1F0A8}', '\u{1F0A9}'])
         };
         if (pageCount === 5) {
             setWords('Card values 10+ = -1')
-            setCards(cardDeck.slice(9, 13))
+            setCards(['\u{1F0AA}', '\u{1F0AB}', '\u{1F0AD}', '\u{1F0AE}'])
         };
         if (pageCount === 6) {
             setWords('Summary: Aces = -1. Card values 2-6  = +1. Card values 7-9 = 0. Card values 10+ = -1.')
-            setCards(cardDeck[0])
+            setCards('')
         };
         if (pageCount === 7) {
             setWords('Betting: Increase your bet when count is +2 or greater.')
@@ -108,12 +108,16 @@ function Tutorial() {
 
     return (
         <div>
-            Tutorial
+            <h1>Tutorial</h1>
             <div>
                 {words}
-                {cards}
-                {pageCount > 1 && <button onClick={() => setPageCount(pageCount - 1)}>Prev</button>}
-                {1 <= pageCount && pageCount <= 7 && <button onClick={() => setPageCount(pageCount + 1)}>Next</button>}
+                <div>
+                    <p id='card'>{cards}</p>
+                </div>
+                <div>
+                    {pageCount > 1 && <button onClick={() => setPageCount(pageCount - 1)}>Prev</button>}
+                    {1 <= pageCount && pageCount <= 7 && <button onClick={() => setPageCount(pageCount + 1)}>Next</button>}
+                </div>
                 {pageCount === 8 && <button onClick={routeChange}>Exercise</button>}
             </div>
         </div>

@@ -15,9 +15,6 @@ function Nav() {
                 <Link style={{ textDecoration: 'none' }} to="/exercise">
                     <h4>Exercise</h4>
                 </Link>
-                {/* <Link to="/game">
-                    <p>Counting Game</p>
-                </Link> */}
             </div>
         </nav>
     );
