@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Counting-Cards/static/css/main.abc95d04.css",
+    "main.js": "/Counting-Cards/static/js/main.a368a3b9.js",
+    "static/js/787.60d2f613.chunk.js": "/Counting-Cards/static/js/787.60d2f613.chunk.js",
+    "index.html": "/Counting-Cards/index.html",
+    "main.abc95d04.css.map": "/Counting-Cards/static/css/main.abc95d04.css.map",
+    "main.a368a3b9.js.map": "/Counting-Cards/static/js/main.a368a3b9.js.map",
+    "787.60d2f613.chunk.js.map": "/Counting-Cards/static/js/787.60d2f613.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abc95d04.css",
+    "static/js/main.a368a3b9.js"
+  ]
+}
