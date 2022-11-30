@@ -6,7 +6,7 @@ function Nav() {
     return (
         <nav>
             <div className='nav-links'>
-                <Link style={{ textDecoration: 'none' }} to="/counting" >
+                <Link style={{ textDecoration: 'none' }} to="/Counting-Cards" >
                     <h4>Home</h4>
                 </Link>
                 <Link style={{ textDecoration: 'none' }} to="/counting-tutorial">

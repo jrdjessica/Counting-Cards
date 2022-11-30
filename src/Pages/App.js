@@ -15,7 +15,7 @@ function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route path="/counting" element={<Home />} />
+          <Route path="/Counting-Cards" element={<Home />} />
           <Route path="/counting-tutorial" element={<Tutorial />} />
           <Route path="/counting-exercise" element={<Exercises />} />
           <Route path="*" element={<Error />} />

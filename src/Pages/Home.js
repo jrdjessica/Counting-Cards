@@ -8,10 +8,10 @@ function Home() {
             <h1>Welcome</h1>
             <h3>Start learning to count cards and learn how to beat the house by clicking below</h3>
             <div className='links'>
-                <Link className='link-item' style={{ textDecoration: 'none' }} to="/tutorial">
+                <Link className='link-item' style={{ textDecoration: 'none' }} to="/counting-tutorial">
                     <p>Tutorial</p>
                 </Link>
-                <Link className='link-item' style={{ textDecoration: 'none' }} to="/exercise">
+                <Link className='link-item' style={{ textDecoration: 'none' }} to="/counting-exercise">
                     <p>Exercise</p>
                 </Link>
             </div>

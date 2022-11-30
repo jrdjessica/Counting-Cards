@@ -104,7 +104,7 @@ function Tutorial() {
     // Navigate to exercise page
     const navigate = useNavigate();
     const routeChange = () => {
-        const path = "/exercise";
+        const path = "/counting-exercise";
         navigate(path);
     }
 
